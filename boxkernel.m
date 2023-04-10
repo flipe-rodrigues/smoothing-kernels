@@ -9,7 +9,7 @@ function k = boxkernel(varargin)
     p.parse(varargin{:});   
     
     k = p.Results;
-    k.nbins = k.boxwidth / k.binwidth * 2;
+    k.nbins = ceil(k.boxwidth / k.binwidth * 2);
     k.paddx = [-1,1] / 2 * k.nbins * k.binwidth;
     k.bins = -k.nbins / 2 + 1 : k.nbins / 2;
     k.x = k.bins * k.binwidth;
