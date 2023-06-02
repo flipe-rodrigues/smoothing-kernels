@@ -13,6 +13,6 @@ function k = boxkernel(varargin)
     k.paddx = [-1,1] / 2 * k.nbins * k.binwidth;
     k.bins = -k.nbins / 2 + 1 : k.nbins / 2;
     k.x = k.bins * k.binwidth;
-    k.pdf = ones(1,k.nbins) .* k.x >= 0;
+    k.pdf = ones(1,k.nbins) .* (k.x >= 0);
     k.pdf = k.pdf / sum(k.pdf);
 end
