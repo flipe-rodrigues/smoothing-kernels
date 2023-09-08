@@ -9,7 +9,7 @@ function k = gausskernel(varargin)
     p.parse(varargin{:});   
     
     k = p.Results;
-    k.nbins = 2 * round(k.sig / k.binwidth * 8.5 / 2);
+    k.nbins = 2 * round(k.sig / k.binwidth * 9 / 2);
     k.paddx = [-1,1] / 2 * k.nbins * k.binwidth;
     k.bins = -k.nbins / 2 + 1 : k.nbins / 2 - 1;
     k.nbins = numel(k.bins);
